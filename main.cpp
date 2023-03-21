@@ -10,16 +10,16 @@ int main()
     srand(time(NULL));
 
     sf::RenderWindow window(sf::VideoMode(400, 400), "SFML works!");
-    sf::CircleShape character(5);
+    sf::CircleShape character(2.5);
     character.setPosition(200,390);
     character.setFillColor(sf::Color::Red);
     vector<sf::RectangleShape> squares;
-    for(int x = 0; x < 40;x ++)
+    for(int x = 0; x < 80;x ++)
     {
-        for(int y=0; y<40;y++)
+        for(int y=0; y<80;y++)
         {
-            sf::RectangleShape cell(sf::Vector2f(10,10));
-            cell.setPosition(x*10, y*10);
+            sf::RectangleShape cell(sf::Vector2f(5,5));
+            cell.setPosition(x*5, y*5);
             //cell.setOutlineThickness(1);
             //cell.setOutlineColor(sf::Color::Black);
             squares.push_back(cell);
@@ -40,22 +40,22 @@ int main()
                 if(event.key.code == sf::Keyboard::Up)
                 {
                     if(y> 0)
-                        character.setPosition(x, y-10);
+                        character.setPosition(x, y-5);
                 }
                 if(event.key.code == sf::Keyboard::Down)
                 {
-                    if(y<390 )
-                        character.setPosition(x, y+10);
+                    if(y<395 )
+                        character.setPosition(x, y+5);
                 }
                 if(event.key.code == sf::Keyboard::Left)
                 {
                     if(x> 0)
-                        character.setPosition(x-10, y);
+                        character.setPosition(x-5, y);
                 }
                 if(event.key.code == sf::Keyboard::Right)
                 {
-                    if(x<390)
-                        character.setPosition(x+10, y);
+                    if(x<395)
+                        character.setPosition(x+5, y);
                 }
                 if(event.key.code == sf::Keyboard::Space)
                 {
